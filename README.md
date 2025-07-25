@@ -412,7 +412,7 @@ pstree -p | grep python
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+Code by Claude pro
 
 ## 🙏 致谢
 
