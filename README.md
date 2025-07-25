@@ -92,6 +92,10 @@ sudo yum install gcc python3-devel -y  # CentOS
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
 sudo apt update && sudo apt install caddy
+# arm64
+curl -L 'https://github.com/caddyserver/caddy/releases/download/v2.7.6/caddy_2.7.6_linux_arm64.tar.gz' -o caddy.tar.gz
+chmod +x caddy
+mv caddy /usr/local/bin/
 ```
 
 ### 2. 配置ComfyUI
