@@ -1,0 +1,219 @@
+{
+    auto_https off
+}
+# Caddyfile 配置
+# 监听8001端口
+:8881 {
+    # 定义静态资源匹配规则
+    @static_files {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.json
+    }
+    
+    # 定义API路径匹配规则
+    @api_paths {
+        path /api/*
+    }
+    
+    # 基于环境变量的令牌验证
+    @hasToken query token_8001=123456789
+    
+    # 直接放行静态资源（无需令牌）
+    handle @static_files {
+        reverse_proxy 127.0.0.1:8001
+    }
+    
+    # 直接放行API路径（无需令牌）
+    handle @api_paths {
+        reverse_proxy 127.0.0.1:8001 
+    }
+   
+    # 定义WebSocket路径匹配规则
+    @websocket_paths {
+        path /ws /ws/*
+    }
+
+    # 直接放行WebSocket路径（无需令牌）
+    handle @websocket_paths {
+        reverse_proxy 127.0.0.1:8001 
+    }
+
+    # 需要令牌验证的其他请求
+    handle @hasToken {
+        # 处理普通HTTP请求
+        handle {
+            reverse_proxy 127.0.0.1:8001 {
+                header_up Host {upstream_hostport}
+                header_up X-Real-IP {remote_host}
+                header_up X-Forwarded-For {remote_host}
+                header_up X-Forwarded-Proto {scheme}
+            }
+        }
+    }
+    
+    # 没有令牌时返回403
+    handle {
+        respond "Access denied. " 403
+    }
+}
+
+# 监听8002端口
+:8882 {
+    # 定义静态资源匹配规则
+    @static_files {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.json
+    }
+    
+    # 定义API路径匹配规则
+    @api_paths {
+        path /api/*
+    }
+    
+    # 基于环境变量的令牌验证
+    @hasToken query token_8002=123456789
+    
+    # 直接放行静态资源（无需令牌）
+    handle @static_files {
+        reverse_proxy 127.0.0.1:8002
+    }
+    
+    # 直接放行API路径（无需令牌）
+    handle @api_paths {
+        reverse_proxy 127.0.0.1:8002
+    }
+   
+    # 定义WebSocket路径匹配规则
+    @websocket_paths {
+        path /ws /ws/*
+    }
+
+    # 直接放行WebSocket路径（无需令牌）
+    handle @websocket_paths {
+        reverse_proxy 127.0.0.1:8002 
+    }
+
+    # 需要令牌验证的其他请求
+    handle @hasToken {
+        # 处理普通HTTP请求
+        handle {
+            reverse_proxy 127.0.0.1:8002 {
+                header_up Host {upstream_hostport}
+                header_up X-Real-IP {remote_host}
+                header_up X-Forwarded-For {remote_host}
+                header_up X-Forwarded-Proto {scheme}
+            }
+        }
+    }
+    
+    # 没有令牌时返回403
+    handle {
+        respond "Access denied. " 403
+    }
+}
+
+# 监听8003端口
+:8883 {
+    # 定义静态资源匹配规则
+    @static_files {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.json
+    }
+    
+    # 定义API路径匹配规则
+    @api_paths {
+        path /api/*
+    }
+    
+    # 基于环境变量的令牌验证
+    @hasToken query token_8003=123456789
+    
+    # 直接放行静态资源（无需令牌）
+    handle @static_files {
+        reverse_proxy 127.0.0.1:8003
+    }
+    
+    # 直接放行API路径（无需令牌）
+    handle @api_paths {
+        reverse_proxy 127.0.0.1:8003
+    }
+   
+    # 定义WebSocket路径匹配规则
+    @websocket_paths {
+        path /ws /ws/*
+    }
+
+    # 直接放行WebSocket路径（无需令牌）
+    handle @websocket_paths {
+        reverse_proxy 127.0.0.1:8003 
+    }
+
+    # 需要令牌验证的其他请求
+    handle @hasToken {
+        # 处理普通HTTP请求
+        handle {
+            reverse_proxy 127.0.0.1:8003 {
+                header_up Host {upstream_hostport}
+                header_up X-Real-IP {remote_host}
+                header_up X-Forwarded-For {remote_host}
+                header_up X-Forwarded-Proto {scheme}
+            }
+        }
+    }
+    
+    # 没有令牌时返回403
+    handle {
+        respond "Access denied. " 403
+    }
+}
+
+# 监听8004端口
+:8884 {
+    # 定义静态资源匹配规则
+    @static_files {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.json
+    }
+    
+    # 定义API路径匹配规则
+    @api_paths {
+        path /api/*
+    }
+    
+    # 基于环境变量的令牌验证
+    @hasToken query token_8004=123456789
+    
+    # 直接放行静态资源（无需令牌）
+    handle @static_files {
+        reverse_proxy 127.0.0.1:8004
+    }
+    
+    # 直接放行API路径（无需令牌）
+    handle @api_paths {
+        reverse_proxy 127.0.0.1:8004
+    }
+   
+    # 定义WebSocket路径匹配规则
+    @websocket_paths {
+        path /ws /ws/*
+    }
+
+    # 直接放行WebSocket路径（无需令牌）
+    handle @websocket_paths {
+        reverse_proxy 127.0.0.1:8004 
+    }
+
+    # 需要令牌验证的其他请求
+    handle @hasToken {
+        # 处理普通HTTP请求
+        handle {
+            reverse_proxy 127.0.0.1:8004 {
+                header_up Host {upstream_hostport}
+                header_up X-Real-IP {remote_host}
+                header_up X-Forwarded-For {remote_host}
+                header_up X-Forwarded-Proto {scheme}
+            }
+        }
+    }
+    
+    # 没有令牌时返回403
+    handle {
+        respond "Access denied. " 403
+    }
+}
