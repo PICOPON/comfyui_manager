@@ -402,9 +402,9 @@ pstree -p | grep python
 我们欢迎社区贡献！请遵循以下步骤：
 
 1. **Fork项目**
-2. **创建特性分支** (`git checkout -b feature/AmazingFeature`)
+2. **创建特性分支** (`git checkout -b PICOPON/comfyui_manager`)
 3. **提交更改** (`git commit -m 'Add some AmazingFeature'`)
-4. **推送到分支** (`git push origin feature/AmazingFeature`)
+4. **推送到分支** (`git push origin PICOPON/comfyui_manager`)
 5. **开启Pull Request**
 
 ### 开发规范
