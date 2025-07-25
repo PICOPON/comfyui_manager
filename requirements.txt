@@ -1,0 +1,35 @@
+# AI绘画工具多用户管理系统依赖包
+# requirements.txt
+
+# Web框架
+Flask==2.3.3
+Flask-SocketIO==5.3.6
+
+# HTTP客户端
+requests==2.31.0
+
+# 系统进程管理
+psutil==5.9.5
+
+# WebSocket支持
+python-socketio==5.8.0
+python-engineio==4.7.1
+
+# 事件驱动
+eventlet==0.33.3
+
+# 加密支持
+cryptography==41.0.4
+
+# 工具库
+click==8.1.7
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+Werkzeug==2.3.7
+
+# 可选：更好的WSGI服务器
+gunicorn==21.2.0
+
+# 可选：进程管理
+supervisor==4.2.5
