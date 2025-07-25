@@ -2,6 +2,7 @@
 
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
+[![NPU](https://img.shields.io/badge/Device-NPU-green.svg)](https://www.hiascend.com/)
 
 🎨 **基于ComfyUI的高性能多用户资源管理系统**
 
